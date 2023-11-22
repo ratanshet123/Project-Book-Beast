@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog - Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Book Catalog - Mythology</h1>
+    </header>
+
+    <nav>
+        <a href="book store.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Login/Register</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+
+    <section>
+        <h2>Books</h2>
+        <div>
+            <h3>Book Title 1</h3>
+            <p>Description of Book 1.</p>
+            <p>Price: $19.99 <button onclick="addToCart('Book Title 1', 19.99)">Add to Cart</button></p>
+        </div>
+
+        <div>
+            <h3>Book Title 2</h3>
+            <p>Description of Book 2.</p>
+            <p>Price: $24.99 <button onclick="addToCart('Book Title 2', 24.99)">Add to Cart</button></p>
+        </div>
+        <div>
+            <h3>Book Title 3</h3>
+            <p>Description of Book 3.</p>
+            <p>Price: $19.99 <button onclick="addToCart('Book Title 3', 19.99)">Add to Cart</button></p>
+        </div>
+    
+        <div>
+            <h3>Book Title 4</h3>
+            <p>Description of Book 4.</p>
+            <p>Price: $24.99 <button onclick="addToCart('Book Title 4', 24.99)">Add to Cart</button></p>
+        </div>
+        <div>
+          <h3>Book Title 5</h3>
+          <p>Description of Book 5.</p>
+          <p>Price: $19.99 <button onclick="addToCart('Book Title 5', 19.99)">Add to Cart</button></p>
+      </div>
+    
+      <div>
+          <h3>Book Title 6</h3>
+          <p>Description of Book 6.</p>
+          <p>Price: $24.99 <button onclick="addToCart('Book Title 6', 24.99)">Add to Cart</button></p>
+      </div>
+      <div>
+        <h3>Book Title 7</h3>
+        <p>Description of Book 7.</p>
+        <p>Price: $19.99 <button onclick="addToCart('Book Title 7', 19.99)">Add to Cart</button></p>
+    </div>
+    
+    
+
+        
+    </section>
+
+    
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cartItems"></ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Bookstore. All rights reserved.</p>
+    </footer>
+</body>
+</html>
