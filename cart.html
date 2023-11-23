@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Shopping Cart - Bookstore</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
     <header>
@@ -17,34 +17,29 @@
         <a href="contact.html">Contact</a>
         <a href="about.html">About</a>
         <a href="login.html">Login/Register</a>
-        <a href="cart.html">Cart</a>
+        <a href="cart1.html">Cart</a>
     </nav>
 
+    
     <section>
-        <h2>Your Cart</h2>
+        <h2>Items in Your Cart</h2>
+
         <ul id="cartItems"></ul>
+        <p>Total Amount: $<span id="totalAmount">0.00</span></p>
+        <button onclick="checkout()">Checkout</button>
     </section>
 
     <footer>
         <p>&copy; 2023 Bookstore. All rights reserved.</p>
     </footer>
 
-    
     <script>
-        let cartItems = [];
+        function loadCart() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let cartItemsList = document.getElementById('cartItems');
+            let totalAmount = document.getElementById('totalAmount');
+            let total = 0;
 
-        function addToCart(bookTitle, price) {
-            cartItems.push({ title: bookTitle, price: price });
-            updateCartDisplay();
-        }
-
-        function removeFromCart(index) {
-            cartItems.splice(index, 1);
-            updateCartDisplay();
-        }
-
-        function updateCartDisplay() {
-            const cartItemsList = document.getElementById('cartItems');
             cartItemsList.innerHTML = '';
 
             cartItems.forEach((item, index) => {
@@ -59,15 +54,27 @@
 
                 listItem.appendChild(removeButton);
                 cartItemsList.appendChild(listItem);
+
+                total += item.price;
             });
 
-            const cartSection = document.getElementById('cart');
-            if (cartItems.length > 0) {
-                cartSection.style.display = 'block';
-            } else {
-                cartSection.style.display = 'none';
-            }
+            totalAmount.textContent = total.toFixed(2);
         }
+
+        function removeFromCart(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            loadCart();
+        }
+
+        function checkout() {
+            alert('Thank you for your purchase!');
+            localStorage.removeItem('cartItems');
+            loadCart();
+        }
+
+        window.onload = loadCart;
     </script>
 </body>
 </html>
