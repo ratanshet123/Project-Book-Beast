@@ -17,56 +17,52 @@
         <a href="contact.html">Contact</a>
         <a href="about.html">About</a>
         <a href="login.html">Login/Register</a>
-        <a href="cart.html">Cart</a>
+        <a href="cart1.html">Cart</a>
     </nav>
 
     <section>
         <h2>Books</h2>
+        
         <div>
+            <img id="book_img" src="https://images.unsplash.com/photo-1592496431122-2349e0fbc666?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Book Title 1">
             <h3>Book Title 1</h3>
             <p>Description of Book 1.</p>
             <p>Price: $19.99 <button onclick="addToCart('Book Title 1', 19.99)">Add to Cart</button></p>
         </div>
-
-        <div>
-            <h3>Book Title 2</h3>
-            <p>Description of Book 2.</p>
-            <p>Price: $24.99 <button onclick="addToCart('Book Title 2', 24.99)">Add to Cart</button></p>
-        </div>
-        <div>
-            <h3>Book Title 3</h3>
-            <p>Description of Book 3.</p>
-            <p>Price: $19.99 <button onclick="addToCart('Book Title 3', 19.99)">Add to Cart</button></p>
-        </div>
-    
-        <div>
-            <h3>Book Title 4</h3>
-            <p>Description of Book 4.</p>
-            <p>Price: $24.99 <button onclick="addToCart('Book Title 4', 24.99)">Add to Cart</button></p>
-        </div>
-        <div>
-          <h3>Book Title 5</h3>
-          <p>Description of Book 5.</p>
-          <p>Price: $19.99 <button onclick="addToCart('Book Title 5', 19.99)">Add to Cart</button></p>
-      </div>
-    
       <div>
-          <h3>Book Title 6</h3>
-          <p>Description of Book 6.</p>
-          <p>Price: $24.99 <button onclick="addToCart('Book Title 6', 24.99)">Add to Cart</button></p>
+        <img id="book_img" src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Book Title 1">
+          <h3>Book Title 2</h3>
+          <p>Description of Book 2.</p>
+          <p>Price: $24.99 <button onclick="addToCart('Book Title 2', 24.99)">Add to Cart</button></p>
       </div>
       <div>
-        <h3>Book Title 7</h3>
-        <p>Description of Book 7.</p>
-        <p>Price: $19.99 <button onclick="addToCart('Book Title 7', 19.99)">Add to Cart</button></p>
+        <img id="book_img" src="https://images.unsplash.com/photo-1641154748135-8032a61a3f80?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Book Title 1">
+        <h3>Book Title 3</h3>
+        <p>Description of Book 3.</p>
+        <p>Price: $19.99 <button onclick="addToCart('Book Title 3', 19.99)">Add to Cart</button></p>
     </div>
-    
-    
 
-        
+    <div>
+        <img id="book_img" src="https://images.unsplash.com/photo-1641260199871-1c7145f3fc3b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Book Title 1">
+        <h3>Book Title 4</h3>
+        <p>Description of Book 4.</p>
+        <p>Price: $24.99 <button onclick="addToCart('Book Title 4', 24.99)">Add to Cart</button></p>
+    </div>
+    <div>
+        <img id="book_img" src="https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Book Title 1">
+      <h3>Book Title 5</h3>
+      <p>Description of Book 5.</p>
+      <p>Price: $19.99 <button onclick="addToCart('Book Title 5', 19.99)">Add to Cart</button></p>
+  </div>
+
+  <div>
+    <img id="book_img" src="https://images.unsplash.com/photo-1610882648335-ced8fc8fa6b6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Book Title 1">
+      <h3>Book Title 6</h3>
+      <p>Description of Book 6.</p>
+      <p>Price: $24.99 <button onclick="addToCart('Book Title 6', 24.99)">Add to Cart</button></p>
+  </div>
     </section>
 
-    
     <section id="cart">
         <h2>Your Cart</h2>
         <ul id="cartItems"></ul>
@@ -75,5 +71,12 @@
     <footer>
         <p>&copy; 2023 Bookstore. All rights reserved.</p>
     </footer>
+    <script >
+         function addToCart(bookTitle, price) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.push({ title: bookTitle, price: price });
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        }
+    </script>
 </body>
 </html>
